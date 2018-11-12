@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <!--挂载点、模板，实例之间的关系-->
+    <div id="root">
+        <!--<h1>hello {{msg}}{{number}}</h1>-->
+        <!--<h1 v-text="number"></h1>-->
+        <!--<h1 v-html="number"></h1>-->
+        <div @click="handleClick">{{content}}</div>
+    </div>
+    <script>
+        new Vue({
+            el:"#root",
+            // template:'<h1>hello {{msg}}</h1>', 模板内容
+            data: {
+                // msg:"world cao",
+                // number:123
+                content:"hello"
+            },
+            methods:{  //定义方法
+			    handleClick:function () {
+                    // alert(666)
+                    this.content = "world" //改变data中的content的值
+				}
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Vue的bind为什么在WebStorm中会报命名空间的错误？
+Preferences -> Editor -> Inspections
+找到XML，把 Unbound XML namespace prefix的勾去掉
+
+v-bind 可以用:代替  v-on 用 @代替 :value显示input框中的值
+v-model数据双向绑定
+v-show（不会删除dom,适用于频繁改变的情况） 和 v-if（会删除dom，适用于只有一次改变的情况）
+v-for 用:key可以提升页面渲染性能
+每一个组件都是一个vue实例
+
+脚手架 vue-cli
+先安装node 和 npm
+node -v  npm -v 查看
