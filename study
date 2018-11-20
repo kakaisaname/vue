@@ -1,3 +1,7 @@
+所有下面的给项目 npm install 都可以改为yarn add
+
+移动端：https://mint-ui.github.io/#!/zh-cn
+
 Vue的bind为什么在WebStorm中会报命名空间的错误？
 Preferences -> Editor -> Inspections
 找到XML，把 Unbound XML namespace prefix的勾去掉
@@ -11,3 +15,144 @@ v-for 用:key可以提升页面渲染性能
 脚手架 vue-cli
 先安装node 和 npm
 node -v  npm -v 查看
+
+安装：
+npm install -g @vue/cli
+# OR
+yarn global add @vue/cli
+Create a project:
+
+vue create my-project
+# OR
+vue ui
+
+//创建项目
+vue create my-project
+显示：
+please pick a preset (use arrow keys)。。。
+按键盘上下键选择默认（default）还是手动（Manually），如果选择default，一路回车执行下去就行了（注：现在vue-cli3.0默认使用yarn下载）
+选择配置，这时你会看见一些选项,
+你要集成什么就选就行了，我这里选个我比较常用的（注：空格键是选中与取消，A键是全选）
+
+//具体的安装流程 参考如下链接
+https://juejin.im/post/5ac476825188255c946be1c8
+或
+https://www.jianshu.com/p/fbcad30031c2
+
+yarn下载：npm install -g yarn
+
+没有了build目录，我们怎么修改项目的配置呢？比如说我想修改一下调试的端口，其实我们可以在项目根目录下增加一个vue.config.js文件，配置如下
+module.exports = {
+  devServer: {
+    port: 8989  //端口
+  }
+}
+
+父组件给子组件传值，通过v-bind 简写:
+子组件给父组件传值，通过$emit
+父组件通过属性的形式给子组件传值,父组件可以随意给子组件传递参数，但子组件不可以随意修改父组件传过来的值
+子组件的data必须是一个函数
+事件后加 native 为给组件绑定原生事件
+v-once 可以有效提高静态资源的性能
+
+VSCODE 插件：
+VueHelper,ext install vue-snippets
+html自动补全：设置下"emmet.triggerExpansionOnTab": true就可以了
+鼠标滚动调节字体大小："editor.mouseWheelZoom": true,
+
+vue-cli3.0:
+public相当于原来的static，里面的index.html是项目的入口
+在src文件夹中新增了views文件夹，用于分类 试图组件 和 公共组件 
+大部分配置 都集成到 vue.config.js这里,在项目根目录下
+render: h => h(App) ES6箭头函数
+store.js代替了原来的store文件夹中的三个js文件
+以vue后缀结尾的都为单文件组件，逻辑放在script标签中
+
+多页应用：
+页面跳转返回HTML
+优点：首屏时间快，SEO效果好
+缺点：页面切换慢
+
+单页应用：（vue是单页面应用）
+页面跳转 JS渲染
+优点：页面切换块
+缺点：首屏时间稍慢，SEO差 （vue可以通过服务器端渲染解决）
+
+移动端：
+在index.html中meta标签添加 minimum-scale=1.0,maximum-scale=1.0,user-scalable-no
+1像素边框问题  引入了boder.css
+点击事件延迟300ms问题；项目目录下，npm install fastclick --save
+
+执行完 npm install fastclick --save后 先执行yarn，再yarn serve
+
+iconfont:
+去到iconfont官网登录操作
+
+Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性
+display: flex;
+CSS 属性 border-radius 允许你设置元素的外边框圆角
+
+vue中@符号代表src目录  css中引用@前加~  ~@
+如何配置vue-cli 3中vue.config.js的路径别名？
+在根目录下新建 vue.config.js
+修改vue.config.js
+// vue.config.js
+module.exports = {
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'assets': '@/assets',
+        'components': '@/components',
+        'views': '@/views',
+      }
+    }
+  },
+}
+
+
+轮播图：
+npm install vue-awesome-swiper@2.6.7 --save    //2.6.7为比较稳定的版本
+
+vue devtools：安装chrom扩展程序
+
+// --------------------------------------vue中使用ajax请求数据-------------------------
+npm install axios --save
+
+vue中  mounted(生命周期函数)
+
+public目录下的文件可以被外部访问到
+
+vue-cli 3.0版本，配置代理Proxy，不同环境不同target（生产环境，uat环境和本地环境的配置）  ******
+新建一个config包，里面存放不同的环境文件，里面包含：pro.env.js(生产环境配置)，uat.env.js(测试环境配置),dev.env.js(本地环境)
+
+//滚动插件下载   npm install better-scroll --save
+
+Vue中的组建中name作用：  ***********8
+1、页面取消缓存用的
+2、递归组件使用
+3、浏览器中vue插件显示的组件名称
+
+//浏览器兼容 ----------
+yarn add babel-polyfill --save  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

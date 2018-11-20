@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件使用中的细节点</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--<table>-->
+            <!--<tbody>-->
+                <!--<tr is="row"></tr>  &lt;!&ndash; is &ndash;&gt;-->
+                <!--<tr is="row"></tr>-->
+                <!--<tr is="row"></tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+        <div ref="hello" @click="handleClick">
+            hello world
+        </div>
+    </div>
+    <script>
+        //子组件中data必须为一个函数,避免多个子组件间互相影响
+        // Vue.component('row',{
+        //     data:function(){
+        //         return {
+        //             content:'this is content'
+        //         }
+        //     },
+        //     template:'<tr><td>{{content}}</td></tr>'
+        // })
+        var vm = new Vue({
+            el:"#app",
+            methods:{
+			    handleClick:function () {
+                    alert(this.$refs.hello.innerHTML) //ref 获取dom元素
+				}
+            }
+        })
+    </script>
+</body>
+</html>
